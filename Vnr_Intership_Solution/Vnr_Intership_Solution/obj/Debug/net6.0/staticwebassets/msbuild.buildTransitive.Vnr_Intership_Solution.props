@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Vnr_Intership_Solution.props" />
+</Project>

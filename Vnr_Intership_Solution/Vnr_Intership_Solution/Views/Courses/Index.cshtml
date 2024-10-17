@@ -1,0 +1,40 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model List<Vnr_Intership_Solution.Models.Entities.CourseDefinition>
+@{
+}
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Vnr_Intership_Solution.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/table-custom.css" />
+
+</head>
+<body>
+    <h1>All Courses</h1>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+                @foreach (var course in Model.Select((value, index) => new { value, index }))
+                {
+                        <tr class="@(course.index % 2 == 1 ? "table-primary" : "")">
+                            <td>
+                                <a href="@Url.Action("Index", "Subject", new { courseId = course.value.Id })">
+                                    @course.value.Name
+                                </a>
+                            </td>
+                        </tr>
+                }
+        </tbody>
+    </table>
+</body>
+</html>
+

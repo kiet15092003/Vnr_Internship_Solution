@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Vnr_Intership_Solution.props" />
+</Project>
